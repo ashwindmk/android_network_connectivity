@@ -16,13 +16,9 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    override fun onStart() {
-        super.onStart()
-        ConnectivityHelper.register(applicationContext)
-    }
-
     override fun onAttachedToWindow() {
         super.onAttachedToWindow()
+        Log.d("network-status", "on-attached-to-window")
         update()
     }
 
@@ -33,10 +29,5 @@ class MainActivity : AppCompatActivity() {
             ConnectivityHelper.ONLINE_DATA -> status_textview.text = "Status: Data"
             else -> status_textview.text = "Status: Offline"
         }
-    }
-
-    override fun onStop() {
-        super.onStop()
-        ConnectivityHelper.unregister()
     }
 }
