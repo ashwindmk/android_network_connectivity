@@ -50,7 +50,7 @@ object ConnectivityHelper {
         }
     }
 
-    fun isOnline(context: Context): Boolean {
+    fun isOnline(): Boolean {
         return status > 0
     }
 
@@ -58,5 +58,3 @@ object ConnectivityHelper {
         return status == ONLINE_WIFI
     }
 }
-
-
